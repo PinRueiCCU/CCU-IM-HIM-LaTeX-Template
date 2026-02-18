@@ -1,30 +1,30 @@
-# 國立中正大學資訊管理研究所／醫療資訊管理研究所論文LaTeX模板
+# National Chung Cheng University Information Management Thesis / Dissertation LaTeX Template<br>National Chung Cheng University Health Information Management Thesis / Dissertation LaTeX Template
 
-這份 README 是給第一次使用 LaTeX 的人看的。
-你不用先懂很多理論，只要照著步驟做，就可以把論文編譯成 `main.pdf`。
+This README is written for first-time users.
+You can follow it step by step and build your thesis PDF without deep LaTeX knowledge.
 
-## 1. 這個模板可以做什麼
-- 準備好論文常見結構：封面、摘要、目錄、章節、參考文獻、附錄。
-- 預設格式對齊 `format.pdf`。
-- 文獻系統使用 `biblatex-apa` + `biber`。
+## 1. What this template does
+- Provides a ready thesis structure: cover, abstracts, TOC, chapters, references, and appendix.
+- Uses style settings aligned with `format.pdf`.
+- Uses `biblatex-apa` with `biber` for references.
 
-## 2. 要先準備的東西
+## 2. What you need before building
 
-### 工具
-需要能在終端機執行這兩個指令：
+### Tools
+You need these commands available in your terminal:
 - `xelatex`
 - `biber`
 
-### 字型
-模板會檢查字型，缺少會直接停止編譯：
-- 英文：`Times New Roman`
-- 中文：`BiauKai` 或 `DFKai-SB`
+### Fonts
+The class performs strict checks. Build will stop if fonts are missing.
+- English: `Times New Roman`
+- Chinese: `BiauKai` or `DFKai-SB`
 
-## 3. 最速上手流程
-1. 打開這個專案資料夾。
-2. 編輯 `ccusetup.tex`，把題目、姓名、教授、日期改成你的資料。
-3. 編輯章節內容（在 `sections/` 資料夾）。
-4. 在專案根目錄執行下面四行：
+## 3. Fast start
+1. Open this project folder.
+2. Edit `ccusetup.tex` and replace title, name, advisor, and date.
+3. Edit chapter content under `sections/`.
+4. Run these four commands in the project root:
 
 ```bash
 xelatex main.tex
@@ -33,93 +33,92 @@ xelatex main.tex
 xelatex main.tex
 ```
 
-5. 編譯成功後，會得到 `main.pdf`。
+5. You will get `main.pdf`.
 
-## 4. 幾乎會碰的檔案
-- `ccusetup.tex`：封面與基本資料。
-- `frontpages/acknowledgement.tex`：誌謝。
-- `frontpages/abstract.tex`：中英文摘要。
-- `sections/*.tex`：各章正文。
-- `backpages/references.bib`：文獻資料。
-- `backpages/appendix.tex`：附錄。
+## 4. Files you will edit most often
+- `ccusetup.tex`: cover and metadata.
+- `frontpages/acknowledgement.tex`: acknowledgement.
+- `frontpages/abstract.tex`: Chinese and English abstracts.
+- `sections/*.tex`: chapter content.
+- `backpages/references.bib`: bibliography entries.
+- `backpages/appendix.tex`: appendix content.
 
-## 5. 參考文獻怎麼寫
+## 5. How to write references
 
-### 最重要的兩個規則
-- 每一筆文獻都要有 `langid`。
-- 中文文獻建議加 `sortkey`（用來控制排序）。
+### Two required rules
+- Every entry must have `langid`.
+- Chinese entries should add `sortkey` for stable ordering.
 
-### 範例
+### Example
 
 ```bibtex
 @article{chen2021smarthealth,
-  author  = {作者一 and 作者二},
-  title   = {文章標題},
-  journal = {文章來源},
-  year    = {年份},
-  langid  = {語言},
-  sortkey = {00-00-00-XXXX}
+  author  = {陳怡君 and 林信宏},
+  title   = {智慧醫療系統之資料治理架構研究},
+  journal = {資訊管理學報},
+  year    = {2021},
+  langid  = {chinese},
+  sortkey = {16-11-10-chen}
 }
 ```
 
-### 編譯提醒
-你只要改過 `.bib`，就一定要重新跑完整四步：
-`xelatex -> biber -> xelatex -> xelatex`。
+### Important
+Whenever you edit `.bib`, run the full build sequence again:
+`xelatex -> biber -> xelatex -> xelatex`.
 
-## 6. 可選功能（預設關閉）
+## 6. Optional features (all disabled by default)
 
-### 顯示摘要關鍵字
-在 `main.tex` 打開：
+### Show keyword lines in abstracts
+Enable in `main.tex`:
 
 ```tex
 \showkeywords
 ```
 
-若要關閉：
+Disable with:
 
 ```tex
 \hidekeywords
 ```
 
-### 顯示符號列表
-在 `main.tex` 取消註解：
+### Enable denotation page
+Uncomment in `main.tex`:
 
 ```tex
 \input{frontpages/denotation}
 ```
 
-### 產生書背與封底
-在 `main.tex` 加上：
+### Generate spine and back cover pages
+Add in `main.tex`:
 
 ```tex
 \makespine
 \makebackcover
 ```
 
-## 7. 版面
-模板已經設定好：
-- A4 紙張。
-- 四邊邊界 `2cm`。
-- 頁碼距底邊 `1cm`。
-- 正文 12pt、1.5 倍行距。
-- 章標題為「第X章、標題」。
-- 圖表編號使用 `1.1` 這種點號格式。
+## 7. Format
+- A4 paper.
+- Margins: `2cm` on all sides.
+- Page number position: `1cm` above the bottom edge.
+- Body text: 12pt, line spacing 1.5.
+- Chapter heading format in Chinese mode: `第X章、標題`.
+- Figure/table numbering uses dotted format like `1.1`.
 
-## 8. 常見錯誤與處理方式
+## 8. Common errors and fixes
 
-### 錯誤：`Please (re)run Biber on the file: main`
-做法：重新執行完整四步編譯。
+### Error: `Please (re)run Biber on the file: main`
+Fix: run the full four-step build sequence again.
 
-### 錯誤：找不到字型
-做法：安裝 `Times New Roman` 與 `BiauKai/DFKai-SB`，再編譯。
+### Error: missing font
+Fix: install `Times New Roman` and `BiauKai/DFKai-SB`, then rebuild.
 
-### 目錄頁碼不正確
-做法：再跑 1 至 2 次 `xelatex main.tex`。
+### TOC/LOF/LOT page numbers are wrong
+Fix: run `xelatex main.tex` one or two more times.
 
-### 文中有引用 但參考文獻清單是空的
-做法：檢查 `.bib` 條目是否完整，特別是 `langid`。
+### In-text citation exists, but bibliography list is empty
+Fix: check your `.bib` entry fields, especially `langid`.
 
-## 9. 專案結構一覽
+## 9. Project structure
 
 ```text
 .
@@ -135,18 +134,18 @@ xelatex main.tex
 └── figures/
 ```
 
-## 10. 清理中間檔
-如果資料夾看起來很亂，可以刪除這些中間檔：
+## 10. Optional cleanup of build files
+If the folder looks messy, you can remove these intermediate files:
 - `*.aux` `*.bcf` `*.bbl` `*.blg`
 - `*.log` `*.out` `*.run.xml`
 - `*.toc` `*.lof` `*.lot`
 
 <<<<<<< HEAD
-## 11. 致謝
-本模板是基於 [anlit75/CCU-Thesis-LaTeX-Template](https://github.com/anlit75/CCU-Thesis-LaTeX-Template)，特別感謝 [anlit75](https://github.com/anlit75) 的貢獻，才有這個模板的誕生。
+## 11. Acknowledgements
+This template is based on [anlit75/CCU-Thesis-LaTeX-Template](https://github.com/anlit75/CCU-Thesis-LaTeX-Template), and special thanks to [anlit75](https://github.com/anlit75) for his contribution, which made this template possible.
 
-## 12. 授權
+## 12. License
 =======
-## 11. 授權
+## 11. License
 >>>>>>> c30a848 (Initial public release: CCU thesis LaTeX template)
-本專案使用 `MIT License`，請見 `LICENSE`。
+This project is under the `MIT License`. See `LICENSE`.
