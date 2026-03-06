@@ -140,12 +140,8 @@ If the folder looks messy, you can remove these intermediate files:
 - `*.log` `*.out` `*.run.xml`
 - `*.toc` `*.lof` `*.lot`
 
-<<<<<<< HEAD
 ## 11. Acknowledgements
 This template is based on [anlit75/CCU-Thesis-LaTeX-Template](https://github.com/anlit75/CCU-Thesis-LaTeX-Template), and special thanks to [anlit75](https://github.com/anlit75) for his contribution, which made this template possible.
 
 ## 12. License
-=======
-## 11. License
->>>>>>> c30a848 (Initial public release: CCU thesis LaTeX template)
 This project is under the `MIT License`. See `LICENSE`.

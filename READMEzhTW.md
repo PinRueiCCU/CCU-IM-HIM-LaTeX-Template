@@ -141,12 +141,8 @@ xelatex main.tex
 - `*.log` `*.out` `*.run.xml`
 - `*.toc` `*.lof` `*.lot`
 
-<<<<<<< HEAD
 ## 11. 致謝
 本模板是基於 [anlit75/CCU-Thesis-LaTeX-Template](https://github.com/anlit75/CCU-Thesis-LaTeX-Template)，特別感謝 [anlit75](https://github.com/anlit75) 的貢獻，才有這個模板的誕生。
 
 ## 12. 授權
-=======
-## 11. 授權
->>>>>>> c30a848 (Initial public release: CCU thesis LaTeX template)
 本專案使用 `MIT License`，請見 `LICENSE`。

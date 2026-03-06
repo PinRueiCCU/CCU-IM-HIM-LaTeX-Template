@@ -662,7 +662,7 @@
 % - top: 上邊界
 % - bottom: 下邊界
 %
-\titlespacing*{\section}{0pt}{0pt}{2\baselineskip}     % 標題後空兩行
+\titlespacing*{\section}{0pt}{0pt}{\baselineskip}      % 與後續小節合計空兩行
 \titlespacing*{\subsection}{0pt}{\baselineskip}{\baselineskip}
 \titlespacing*{\subsubsection}{0pt}{\baselineskip}{0.5\baselineskip}
 
@@ -931,7 +931,7 @@
 
 \newcommand{\makespine}{
   \cleardoublepage
-  \thispagestyle{plain}
+  \thispagestyle{empty}
   \vspace*{\fill}
   \noindent\hspace*{1.2cm}\rotatebox{90}{\parbox[c]{22cm}{\centering\fontsize{12}{18}\selectfont \ccu@spinetext}}
   \vspace*{\fill}
@@ -939,7 +939,7 @@
 
 \newcommand{\makebackcover}{
   \cleardoublepage
-  \thispagestyle{plain}
+  \thispagestyle{empty}
   \null
 }
 

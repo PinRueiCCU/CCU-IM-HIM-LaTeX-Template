@@ -14,6 +14,11 @@
 \addbibresource{backpages/references.bib}
 
 \begin{document}
+	% 加入浮水印 Watermark
+	% 若需要在封面加上浮水印，請將\makewatermark{watermark}放在\makecover之前
+	%
+	\makewatermark{watermark}                         % 加入浮水印（Watermark）
+
 	% 封面 Cover
 	% 若需要在封面加上（初稿）字樣，請在\makecover後加上{draft}
 	%
@@ -24,18 +29,8 @@
 	% \makeverification會生成空白的審定書
 	% 若有審定書pdf檔案，可用\renderverification{檔案路徑}渲染審定書
 	%
-<<<<<<< HEAD
 	\makeverification                               	% 口試委員審定書（Verification Letter）
 	% \renderverification{frontpages/verification}      % 渲染口試委員審定書（Render Verification Letter）
-=======
-	% \makeverification                               % 口試委員審定書（Verification Letter）
-	\renderverification{frontpages/verification}      % 渲染口試委員審定書（Render Verification Letter）
->>>>>>> c30a848 (Initial public release: CCU thesis LaTeX template)
-
-	% 加入浮水印 Watermark
-	% 若需要再封面加上浮水印，請將\makewatermark{watermark}放在\makecover之前
-	%
-	\makewatermark{watermark}                         % 加入浮水印（Watermark）
 	% \showkeywords                                   % 顯示摘要關鍵字（預設隱藏）
 	% \hidekeywords                                   % 隱藏摘要關鍵字
 
@@ -64,5 +59,5 @@
 	% 附錄 Appendix
 	\input{backpages/appendix}                        % 附錄（Appendix）
 	% \makespine                                      % 可選：產生書背頁
-	% \makebackcover                                  % 可選：產生封底頁
+	\makebackcover                                    % 產生封底頁
 \end{document}
