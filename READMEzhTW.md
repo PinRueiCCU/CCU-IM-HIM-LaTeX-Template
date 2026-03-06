@@ -5,7 +5,7 @@
 
 ## 1. 這個模板可以做什麼
 - 準備好論文常見結構：封面、摘要、目錄、章節、參考文獻、附錄。
-- 預設格式對齊 `format.pdf`。
+- 預設格式對齊 `docs/format.pdf`。
 - 文獻系統使用 `biblatex-apa` + `biber`。
 
 ## 2. 要先準備的東西
@@ -34,6 +34,12 @@ xelatex main.tex
 ```
 
 5. 編譯成功後，會得到 `main.pdf`。
+
+也可以直接用：
+
+```bash
+./scripts/build.sh
+```
 
 ## 4. 幾乎會碰的檔案
 - `ccusetup.tex`：封面與基本資料。
@@ -123,23 +129,26 @@ xelatex main.tex
 
 ```text
 .
-├── main.tex
-├── ccuthesis.cls
-├── ccusetup.tex
-├── format.pdf
-├── frontpages/
-├── sections/
-├── backpages/
-│   ├── appendix.tex
-│   └── references.bib
-└── figures/
+├── main.tex                 # 主檔入口
+├── ccuthesis.cls            # 論文 class
+├── ccusetup.tex             # 論文基本資料
+├── docs/
+│   └── format.pdf           # 官方格式規範
+├── scripts/
+│   ├── build.sh             # 完整 XeLaTeX + Biber 編譯
+│   └── clean.sh             # 清除編譯輸出
+├── frontpages/              # 誌謝 / 摘要 / 符號列表 / 審定書
+├── sections/                # 各章正文
+├── backpages/               # 文獻與附錄
+└── figures/                 # 圖片與浮水印資產
 ```
 
 ## 10. 清理中間檔
-如果資料夾看起來很亂，可以刪除這些中間檔：
-- `*.aux` `*.bcf` `*.bbl` `*.blg`
-- `*.log` `*.out` `*.run.xml`
-- `*.toc` `*.lof` `*.lot`
+如果資料夾看起來很亂，直接執行：
+
+```bash
+./scripts/clean.sh
+```
 
 ## 11. 致謝
 本模板是基於 [anlit75/CCU-Thesis-LaTeX-Template](https://github.com/anlit75/CCU-Thesis-LaTeX-Template)，特別感謝 [anlit75](https://github.com/anlit75) 的貢獻，才有這個模板的誕生。

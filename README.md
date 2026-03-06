@@ -5,7 +5,7 @@ You can follow it step by step and build your thesis PDF without deep LaTeX know
 
 ## 1. What this template does
 - Provides a ready thesis structure: cover, abstracts, TOC, chapters, references, and appendix.
-- Uses style settings aligned with `format.pdf`.
+- Uses style settings aligned with `docs/format.pdf`.
 - Uses `biblatex-apa` with `biber` for references.
 
 ## 2. What you need before building
@@ -34,6 +34,12 @@ xelatex main.tex
 ```
 
 5. You will get `main.pdf`.
+
+Preferred shortcut:
+
+```bash
+./scripts/build.sh
+```
 
 ## 4. Files you will edit most often
 - `ccusetup.tex`: cover and metadata.
@@ -122,23 +128,26 @@ Fix: check your `.bib` entry fields, especially `langid`.
 
 ```text
 .
-├── main.tex
-├── ccuthesis.cls
-├── ccusetup.tex
-├── format.pdf
-├── frontpages/
-├── sections/
-├── backpages/
-│   ├── appendix.tex
-│   └── references.bib
-└── figures/
+├── main.tex                 # entry point
+├── ccuthesis.cls            # thesis class
+├── ccusetup.tex             # thesis metadata
+├── docs/
+│   └── format.pdf           # official formatting rules
+├── scripts/
+│   ├── build.sh             # full XeLaTeX + Biber build
+│   └── clean.sh             # remove generated build files
+├── frontpages/              # acknowledgement / abstract / denotation / verification
+├── sections/                # thesis chapters
+├── backpages/               # bibliography and appendix
+└── figures/                 # images and watermark assets
 ```
 
 ## 10. Optional cleanup of build files
-If the folder looks messy, you can remove these intermediate files:
-- `*.aux` `*.bcf` `*.bbl` `*.blg`
-- `*.log` `*.out` `*.run.xml`
-- `*.toc` `*.lof` `*.lot`
+If the folder looks messy, run:
+
+```bash
+./scripts/clean.sh
+```
 
 ## 11. Acknowledgements
 This template is based on [anlit75/CCU-Thesis-LaTeX-Template](https://github.com/anlit75/CCU-Thesis-LaTeX-Template), and special thanks to [anlit75](https://github.com/anlit75) for his contribution, which made this template possible.

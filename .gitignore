@@ -4,9 +4,9 @@
 !.vscode/launch.json
 !.vscode/settings.json
 !.vscode/tasks.json
-!frontpages/verification.pdf
 *.aux
 *.bbl
+*.bcf
 *.blg
 *.fdb_latexmk
 *.fls
@@ -17,9 +17,13 @@
 *.out
 *.otf
 *.pdf
+!docs/format.pdf
+!frontpages/verification.pdf
+*.run.xml
 *.synctex
 *.synctex.gz
 *.swp
 *.toc
 *.ttf
 *.xdv
+missfont.log
