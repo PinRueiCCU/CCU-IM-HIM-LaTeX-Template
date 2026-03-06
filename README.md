@@ -1,5 +1,4 @@
-# National Chung Cheng University Information Management Thesis / Dissertation LaTeX Template<br>National Chung Cheng University Health Information Management Thesis / Dissertation LaTeX Template
-
+# National Chung Cheng University<br>Information Management / Health Information Management<br>Thesis / Dissertation LaTeX Template
 This README is written for first-time users.
 You can follow it step by step and build your thesis PDF without deep LaTeX knowledge.
 
